@@ -3,6 +3,7 @@ const connectDB = require("./config/db");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/authRoutes");
+const quizRoutes = require("./routes/quizRoutes");
 
 // get the configuration setting from the environment variables
 dotenv.config();
@@ -21,8 +22,8 @@ const PORT = process.env.PORT || 5000;
 // Routes need to be create after this
 // auth route
 app.use("/api/auth", authRoutes);
-
 // quiz route
+app.use("/api/quiz", quizRoutes);
 
 // check whether the application is working fine or not
 app.listen(PORT, () => {
