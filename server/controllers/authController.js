@@ -2,7 +2,7 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { name, email, password } = req.body;
   try {
     const user = await User.create({ name, email, password });
@@ -15,6 +15,26 @@ const register = async (req, res) => {
   }
 };
 
-const login = async (req, res) => {};
+const login = async (req, res) => {
+  const { email, password } = req.body;
+  let user = await User.findOne({ email });
+  if (!user) {
+    return res.status(400).send({ error: "Invalid Credentials" });
+  }
+
+  const isMatch = await user.matchPassword(password);
+  if (!isMatch) {
+    return res.status(400).send({ error: "Invalid Credentials" });
+  }
+
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    expiresIn: "1h",
+  });
+
+  return res.status(200).send({
+    user,
+    token,
+  });
+};
 
 module.exports = { register, login };
