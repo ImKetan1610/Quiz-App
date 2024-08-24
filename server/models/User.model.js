@@ -15,6 +15,10 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  quizzes: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Quiz'
+  }],
 },{
     timestamps: true,
     versionKey:  false
