@@ -6,7 +6,7 @@ const quizSchema = mongoose.Schema(
     type: { type: String, required: true, enum:['POLL','QnA'] },
     questions: [{type: mongoose.Schema.Types.ObjectId, ref: "Question"}],
     impressions: { type: Number, default: 0 },
-    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   },
   {
     timestamps: true,
