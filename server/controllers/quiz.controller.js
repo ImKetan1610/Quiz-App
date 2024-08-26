@@ -32,16 +32,6 @@ const createQuiz = async (req, res) => {
   }
 };
 
-// get all quiz
-const getAllQuiz = async (req, res) => {
-  try {
-    const quizzes = await QuizModel.find();
-    return res.status(200).json(quizzes);
-  } catch (error) {
-    return res.status(400).json({ error: error.message });
-  }
-};
-
 const getQuizById = async (req, res) => {
   try {
     const id = req.params.id;
@@ -85,4 +75,4 @@ const deleteQuiz = async (req, res) => {
   }
 };
 
-module.exports = { createQuiz, getAllQuiz, getQuizById, deleteQuiz };
+module.exports = { createQuiz, getQuizById, deleteQuiz };
