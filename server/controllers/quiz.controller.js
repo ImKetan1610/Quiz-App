@@ -1,5 +1,6 @@
 const QuestionModel = require("../models/Question.model");
 const QuizModel = require("../models/Quiz.model");
+const UserModel = require("../models/User.model");
 
 const createQuiz = async (req, res) => {
   try {
@@ -30,17 +31,58 @@ const createQuiz = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error." });
   }
 };
-const getQuizById = async (req, res) => {
+
+// get all quiz
+const getAllQuiz = async (req, res) => {
   try {
+    const quizzes = await QuizModel.find();
+    return res.status(200).json(quizzes);
   } catch (error) {
-    return res.status(500).json({ message: "Internal Server Error." });
+    return res.status(400).json({ error: error.message });
   }
 };
-const deleteQuiz = async (req, res) => {
+
+const getQuizById = async (req, res) => {
   try {
+    const id = req.params.id;
+    const quiz = await QuizModel.findById(id).populate({
+      path: "questions",
+      select: "question poll impression correctImpression",
+    });
+
+    if (!quiz) {
+      return res.status(404).json({ message: "Quiz not found" });
+    }
+
+    if (quiz.createdBy != req.user._id) {
+      return res.status(400).json({ message: "Unauthorized access" });
+    }
+
+    return res.status(200).json(quiz);
   } catch (error) {
     return res.status(500).json({ message: "Internal Server Error." });
   }
 };
 
-module.exports = { createQuiz, getQuizById, deleteQuiz };
+const deleteQuiz = async (req, res) => {
+  try {
+    const id = req.params.id;
+    let quiz = await Quiz.findById(id);
+
+    if (!quiz) return res.status(404).json({ message: "Quiz is not found." });
+    if (quiz.createdBy != req.user._id)
+      return res.status(400).json({ message: "Unauthorized Access." });
+
+    await QuizModel.findByIdAndDelete(id);
+
+    await UserModel.findByIdAndUpdate(req.user._id, {
+      $pull: { quizzes: id },
+    });
+
+    return res.status(200).json({ message: "success" });
+  } catch (error) {
+    return res.status(500).json({ message: "Internal Server Error." });
+  }
+};
+
+module.exports = { createQuiz, getAllQuiz, getQuizById, deleteQuiz };
