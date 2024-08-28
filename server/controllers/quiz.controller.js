@@ -17,6 +17,9 @@ const createQuiz = async (req, res) => {
 
     for (let que of questions) {
       que.quizId = quiz.id;
+      if(quiz.typeOfQuiz == "POLL") {
+        que.poll = new Array(que.options.length).fill(0)
+      }
       let newQue = await QuestionModel.create(que);
       arrayOfQuestion.push(newQue.id);
     }
