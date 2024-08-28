@@ -1,0 +1,31 @@
+.container {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #ff5d01;
+}
+
+.img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.createdAt {
+  color: #60b84b;
+}

@@ -5,7 +5,6 @@ import s from "./Register.module.css";
 import { context } from "../../Context/UserContext";
 import { BACKEND_URL } from "../../../utils/constant.js";
 
-
 const Register = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -28,34 +27,36 @@ const Register = () => {
 
   const validateForm = () => {
     const newErrors = {};
-  
+
     // Name validation
     if (!formData.name || formData.name.length < 8) {
       newErrors.name = "Name must be at least 8 characters long";
     }
-  
+
     // Email validation
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please add a valid email ID";
     }
-  
+
     // Password validation
     if (!formData.password) {
       newErrors.password = "Password is required";
     } else if (
-      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(formData.password)
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+        formData.password
+      )
     ) {
-      newErrors.password = "Password should be at least 8 characters long and include at least one special character, one number, one lowercase letter, and one uppercase letter.";
+      newErrors.password =
+        "Password should be at least 8 characters long and include at least one special character, one number, one lowercase letter, and one uppercase letter.";
     }
-  
+
     // Confirm password validation
     if (formData.confirmPassword !== formData.password) {
       newErrors.confirmPassword = "Passwords do not match";
     }
-  
+
     return newErrors;
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,19 +65,24 @@ const Register = () => {
       setErrors(validationErrors);
     } else {
       try {
-        const res = await axios.post(`${BACKEND_URL}/api/auth/register`, formData);
+        const res = await axios.post(
+          `${BACKEND_URL}/api/auth/register`,
+          formData
+        );
         if (res.status === 201) {
           const token = res.data.token;
           localStorage.setItem("quiz_builder", token);
+          localStorage.setItem("user-Name", res.data.user.name);
           setUser({
             email: formData.email,
             isAuthorize: true,
-            username: res.data.username,
+            name: res.data.user.name,
           });
-          navigate('/dashboard');
+          navigate("/dashboard");
         }
       } catch (error) {
         console.error("Registration error:", error);
+        throw new Error(error.response.data.message);
       }
     }
   };
@@ -117,7 +123,9 @@ const Register = () => {
           className={errors.password ? s.errorInput : ""}
           required
         />
-        {errors.password && <span className={s.errorText}>{errors.password}</span>}
+        {errors.password && (
+          <span className={s.errorText}>{errors.password}</span>
+        )}
       </div>
       <div className={s.formSection}>
         <label>Confirm Password</label>
@@ -129,7 +137,9 @@ const Register = () => {
           className={errors.confirmPassword ? s.errorInput : ""}
           required
         />
-        {errors.confirmPassword && <span className={s.errorText}>{errors.confirmPassword}</span>}
+        {errors.confirmPassword && (
+          <span className={s.errorText}>{errors.confirmPassword}</span>
+        )}
       </div>
       <button type="submit" className={s.signUpBtn}>
         Sign-Up

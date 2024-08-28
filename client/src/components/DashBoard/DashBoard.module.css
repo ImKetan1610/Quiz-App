@@ -1,0 +1,28 @@
+.container {
+  margin: 2rem 4rem;
+  width: 87%;
+  display: flex;
+  color: #474444;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 100%;
+  gap: 1rem;
+  margin: 5rem 0rem 0rem 0rem;
+}
+
+.trendingQuizzes {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.createdAt {
+  color: #60b84b;
+}

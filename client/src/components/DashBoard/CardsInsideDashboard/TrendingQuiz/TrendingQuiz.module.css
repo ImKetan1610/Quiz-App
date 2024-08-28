@@ -1,0 +1,19 @@
+.container{
+    background-color: white;
+    border-radius: 0.5rem;
+    max-width: 14rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    padding: 1rem 4rem;
+    border-radius: 0.5rem;
+}
+
+.title {
+    padding: 0rem 0.5rem;
+    font-size: 4rem;
+}
+
+.subTitle {
+    font-size: 1.5rem;
+}
