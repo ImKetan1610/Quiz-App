@@ -1,0 +1,9 @@
+.score {
+  color: #60b84b;
+  font-weight: 600;
+}
+
+.message {
+  text-align: center;
+  padding: 3rem;
+}

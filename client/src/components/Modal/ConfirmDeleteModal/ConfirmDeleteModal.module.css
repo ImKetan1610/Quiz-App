@@ -1,0 +1,39 @@
+.container {
+  padding: 2rem 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header {
+  width: 25rem;
+  text-align: center;
+  color: #474444;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.delete {
+  background-color: #ff4b4b;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 5rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.cancel {
+  font-size: 1rem;
+  background: #ffffff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 5rem;
+}

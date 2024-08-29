@@ -45,7 +45,7 @@ function HomeLinks() {
             isActive ? `${s.link} ${s.active}` : s.link
           }
           end
-          to={"analytics"}
+          to={"analysis"}
         >
           Analytics
         </NavLink>

@@ -4,7 +4,7 @@ const UserModel = require("../models/User.model");
 
 const createQuiz = async (req, res) => {
   try {
-    let userId = req.User._id;
+    let userId = req.user._id;
     const { quizName, typeOfQuiz, questions } = req.body;
     let arrayOfQuestion = [];
 
@@ -27,11 +27,11 @@ const createQuiz = async (req, res) => {
     quiz.questions = [...arrayOfQuestion];
     await quiz.save();
 
-    await User.findByIdAndUpdate(userId, { $push: { quizzes: quiz.id } });
+    await UserModel.findByIdAndUpdate(userId, { $push: { quizzes: quiz.id } });
 
     return res.status(201).json(quiz);
   } catch (error) {
-    return res.status(500).json({ message: "Internal Server Error." });
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -53,7 +53,7 @@ const getQuizById = async (req, res) => {
 
     return res.status(200).json(quiz);
   } catch (error) {
-    return res.status(500).json({ message: "Internal Server Error." });
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -74,7 +74,7 @@ const deleteQuiz = async (req, res) => {
 
     return res.status(200).json({ message: "success" });
   } catch (error) {
-    return res.status(500).json({ message: "Internal Server Error." });
+    return res.status(500).json({ message: error.message });
   }
 };
 

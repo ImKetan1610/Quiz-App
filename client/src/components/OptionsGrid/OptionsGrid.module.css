@@ -1,0 +1,46 @@
+.imageGrid {
+  display: flex;
+  flex-direction: row;
+}
+
+.imageItem {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 10rem;
+  line-height: 1;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  width: 20rem;
+  max-width: 25rem;
+  overflow-wrap: anywhere;
+  transition: box-shadow 0.3s ease-in-out;
+  overflow-y: scroll;
+}
+
+.text {
+  /* width: 50%; */
+  padding: 1rem 0rem;
+  overflow-wrap: anywhere;
+}
+
+.imageItem.selected {
+  box-shadow: 0 0 0 2px #1a73e8; /* Highlight selected image with a border */
+}
+
+.imageUrl {
+  width: 100%;
+  object-fit: fill;
+  height: 100%;
+  border-radius: 15px;
+}
+
+@media (max-width: 600px) {
+  .imageItem {
+    padding: 12px;
+  }
+}

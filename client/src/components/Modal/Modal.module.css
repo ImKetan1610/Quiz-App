@@ -1,0 +1,16 @@
+.modalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.274);
+}
+
+.content {
+  background-color: #fbfbfb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}

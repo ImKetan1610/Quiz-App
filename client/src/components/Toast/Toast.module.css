@@ -1,0 +1,73 @@
+.toast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-in forwards;
+  animation-delay: 0s, 2.7s; /* Adjust delay for fade out */
+}
+
+.toastInnerContainer {
+  padding: 10px 20px 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toastIcon {
+  margin-right: 10px;
+}
+
+.toastMessage {
+  flex-grow: 1;
+}
+
+.toastClose {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 5px;
+  background-color: #e0e0e0; /* Background color of the progress bar container */
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #60b84b;
+  border-radius: 5px;
+  transition: width 0.05s linear;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.range {
+  width: 100%;
+  -ms-progress-appearance: none;
+}

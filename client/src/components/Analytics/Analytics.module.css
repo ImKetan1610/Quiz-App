@@ -1,0 +1,17 @@
+.container{
+    padding: 2rem;
+    width: 80%;
+    text-align: center;
+}
+
+.heading{
+    color: #5076FF;
+}
+
+.table{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

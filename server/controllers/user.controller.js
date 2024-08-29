@@ -23,7 +23,7 @@ const getMyQuizStats = async (req, res) => {
 
     return res.status(200).json({ data });
   } catch (error) {
-    return res.status(500).json({ message: error });
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -46,7 +46,7 @@ const getTrendingQuiz = async (req, res) => {
   }
 };
 
-const getMyQuizzes = async (res, req) => {
+const getMyQuizzes = async (req, res) => {
   try {
     let id = req.user._id;
     let allQuiz = await UserModel.findById(id)
@@ -59,6 +59,7 @@ const getMyQuizzes = async (res, req) => {
 
     return res.status(200).json(allQuiz);
   } catch (error) {
+    console.log(error.message)
     return res.status(500).json({ message: error });
   }
 };

@@ -1,0 +1,68 @@
+.formContainer {
+  width: 35rem;
+  padding: 2.5rem 2.5rem 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quizNameInput {
+  border: none;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  width: 94%;
+}
+
+.inputRadio {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  font-size: 1rem;
+}
+
+label {
+  padding: 1rem 0rem;
+  width: 20%;
+  color: #9f9f9f;
+  text-align: center;
+}
+
+.radioLabel {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  color: #9f9f9f;
+  padding: 0.5rem 1rem;
+}
+
+.radioGroup {
+  display: flex;
+  width: 98.5%;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  justify-content: space-between;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+  align-content: flex-start;
+}
+
+.btn {
+  background-color: #ffffff;
+  border: none;
+  width: 40%;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.281);
+  border-radius: 0.5rem;
+}
+
+.active {
+  background: #60b84b;
+  color: white;
+}

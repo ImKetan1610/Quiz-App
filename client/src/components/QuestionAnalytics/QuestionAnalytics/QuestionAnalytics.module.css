@@ -1,0 +1,6 @@
+.impressionContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 2rem 0rem;
+}
