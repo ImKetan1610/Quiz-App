@@ -1,17 +1,18 @@
-.container{
-    padding: 2rem;
-    width: 80%;
-    text-align: center;
+.container {
+  padding: 2rem;
+  width: 90%;
+  text-align: center;
+  /* background-color: red;  */
 }
 
-.heading{
-    color: #5076FF;
+.heading {
+  color: #5076ff;
 }
 
-.table{
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.table {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

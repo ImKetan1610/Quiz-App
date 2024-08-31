@@ -28,7 +28,8 @@ function customHooks() {
   async function createQuiz(data) {
     try {
       const res = await apiClient.post("/api/quiz", data);
-
+      console.log("created Quiz", res.data);
+      localStorage.setItem("recent-created-quiz-id", res.data._id);
       if (res.status === 201) {
         return true;
       }

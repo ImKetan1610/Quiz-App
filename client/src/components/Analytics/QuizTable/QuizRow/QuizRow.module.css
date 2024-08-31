@@ -1,31 +1,29 @@
 .row:nth-child(odd) {
-    background-color: #B3C4FF;
-    border-top-left-radius: 0.5rem;
-  }
+  background-color: #b3c4ff;
+  border-top-left-radius: 0.5rem;
+}
 
-.row{
-    padding: 5rem;
-    border-radius: 5rem;
-  }
+.row {
+  padding: 5rem;
+  border-radius: 5rem;
+}
 
-  tr >td {
-    padding: 0.8rem;
-    font-weight: 600;
-  }
+tr > td {
+  padding: 0.8rem;
+  font-weight: 600;
+}
 
-.start{
-
+.start {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
 }
-.end{
-  
+.end {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   text-decoration: underline;
 }
 
-.img{
+.img {
   display: flex;
   gap: 0.5rem;
 }
@@ -34,6 +32,6 @@
   color: black !important;
 }
 
-.edit{
+.edit {
   cursor: pointer;
 }

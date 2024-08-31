@@ -1,9 +1,6 @@
-/* body {
-  background-color: #041325;
-} */
 .container {
   box-sizing: border-box;
-  background-color: #041325;
+  /* background-color: #041325; */
   width: 100vw;
   font-weight: 800;
   font-size: 1.5rem;
@@ -18,7 +15,7 @@
 
 html {
   height: 100vh;
-  background-color: #041325;
+  /* background-color: #041325; */
 }
 .innerContainer {
   box-sizing: border-box;
