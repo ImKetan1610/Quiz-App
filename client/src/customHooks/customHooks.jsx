@@ -28,7 +28,7 @@ function customHooks() {
   async function createQuiz(data) {
     try {
       const res = await apiClient.post("/api/quiz", data);
-      console.log("created Quiz", res.data);
+      // console.log("created Quiz", res.data);
       localStorage.setItem("recent-created-quiz-id", res.data._id);
       if (res.status === 201) {
         return true;
@@ -134,7 +134,7 @@ function customHooks() {
     try {
       const res = await apiClient.get("/api/user/getTrendingQuiz");
       if (res.status == 201) {
-        return res.data.quizzes;
+        return res.data.quizzes.sort((a, b) => b.impressions - a.impressions);
       } else {
         throw new Error("Server error while getting trending quizzes");
       }

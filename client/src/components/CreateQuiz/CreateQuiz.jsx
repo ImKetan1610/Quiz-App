@@ -3,10 +3,12 @@ import Modal from "../Modal/Modal";
 import QuizTypeForm from "../form/quizTypeForm/QuizTypeForm";
 import QuestionAnswerForm from "../form/questionAnswerForm/QuestionAnswerForm";
 import SuccessCreateQuiz from "../Success/Success";
+import { useNavigate } from "react-router-dom";
 
 function CreateQuiz() {
   const [show, setShow] = useState(true);
   const [quiz, setQuiz] = useState({ quizName: "", typeOfQuiz: "none" }); // Initial state
+  const navigate = useNavigate();
   const [questions, setQuestions] = useState([
     {
       question: "",
@@ -21,6 +23,7 @@ function CreateQuiz() {
 
   function hide() {
     setShow(false);
+    navigate("/analysis");
   }
 
   function hideSuccessfulModal() {

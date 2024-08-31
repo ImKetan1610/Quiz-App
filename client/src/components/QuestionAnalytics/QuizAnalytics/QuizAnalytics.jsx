@@ -10,7 +10,7 @@ function QuizAnalytics() {
   let [quiz, setQuiz] = useState(null); // Adjusted initial state to `null`
   let { getQuizDetail } = customHooks();
 
-  console.log(params);
+  // console.log(params);
 
   async function getAndSetQuiz() {
     if (!params.quizId) return;

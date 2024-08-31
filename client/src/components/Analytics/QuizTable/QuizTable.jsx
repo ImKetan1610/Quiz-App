@@ -36,7 +36,7 @@ const QuizTable = () => {
   }
 
   async function openUpdateModal(id) {
-    console.log("edit click");
+    // console.log("edit click");
     setSelectedId(id);
     await getAndSetQuestion(id);
   }
@@ -59,13 +59,13 @@ const QuizTable = () => {
 
   async function getAndSetQuizzes() {
     const data = await getMyQuizzes();
-    console.log("data",data)
+    // console.log("data",data)
     setQuizzes(data);
   }
 
   useEffect(() => {
     getAndSetQuizzes();
-    console.log("67",quizzes)
+    // console.log("67",quizzes)
   }, []);
 
   return (

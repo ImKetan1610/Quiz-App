@@ -47,7 +47,7 @@ const LoginForm = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      console.log(formData);
+      // console.log(formData);
       try {
         let res = await axios.post(BACKEND_URL + "/api/auth/login", formData);
         if (res.status === 200) {

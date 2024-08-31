@@ -41,7 +41,7 @@ function StartQuiz() {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     } else {
       await getResult();
-      console.log("Quiz Complete. Submit the answers.");
+      // console.log("Quiz Complete. Submit the answers.");
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     }
   };

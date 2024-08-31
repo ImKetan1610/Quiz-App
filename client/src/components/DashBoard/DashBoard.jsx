@@ -40,7 +40,7 @@ const DashBoard = () => {
 
   useEffect(() => {
     getAndSetStats();
-    console.log(quizzes);
+    // console.log(quizzes);
   }, []);
 
   return (

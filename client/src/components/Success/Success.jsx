@@ -9,7 +9,7 @@ const SuccessCreateQuiz = ({ onClose }) => {
   const URL = window.location.origin;
   const handleShowToast = () => {
     const linkText = document.querySelector(`.${s.link}`).textContent;
-    console.log("hey this is url", window.location.origin);
+    // console.log("hey this is url", window.location.origin);
     navigator.clipboard
       .writeText(linkText)
       .then(() => {
