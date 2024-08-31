@@ -48,7 +48,7 @@ function StartQuiz() {
 
   const incrementQuestionImpression = async (id) => {
     try {
-      const res = await axios.get(`${BACKEND_URL}/api/quiz/increaseQuestionImpression/${id}`);
+      const res = await axios.get(`${BACKEND_URL}/api/quiz/questionImpression/${id}`);
       return res.status === 200;
     } catch (error) {
       console.error("Error incrementing question impression:", error);
@@ -58,8 +58,8 @@ function StartQuiz() {
 
   const fetchQuiz = async (id) => {
     try {
-      const res = await axios.get(`${BACKEND_URL}/api/quiz/startQuiz/${id}`);
-      if (res.status === 200) {
+      const res = await axios.get(`${BACKEND_URL}/api/quiz/start/${id}`);
+    if (res.status === 201) {
         setQuiz(res.data);
         setSelectedOptions(new Array(res.data.questions.length).fill(-1));
       } else {

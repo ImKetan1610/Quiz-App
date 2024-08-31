@@ -27,9 +27,7 @@ const DashBoard = () => {
 
   async function getAndSetStats() {
     let data = await getMyStats();
-    let quizzes = await getTrendingQuiz();
-    console.log(data);
-    console.log(quizzes);
+    let quiz = await getTrendingQuiz();
     setTitles((prev) => {
       let newTitle = [...prev];
       newTitle[0].number = data.quizCreated;
@@ -37,11 +35,12 @@ const DashBoard = () => {
       newTitle[2].number = data.totalImpressions;
       return newTitle;
     });
-    setQuizzes(() => quizzes);
+    setQuizzes(()=>quiz);
   }
 
   useEffect(() => {
     getAndSetStats();
+    console.log(quizzes);
   }, []);
 
   return (
@@ -61,10 +60,10 @@ const DashBoard = () => {
         <div className={s.trendingQuizzes}>
           {quizzes?.map((ele) => (
             <QuizCard
-              key={ele.quizname}
-              views={ele.impression}
+              key={ele._id}
+              views={ele.impressions}
               createdAt={ele.createdAt}
-              name={ele.quizname}
+              name={ele.quizName}
             />
           ))}
         </div>

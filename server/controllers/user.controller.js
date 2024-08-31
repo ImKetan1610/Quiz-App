@@ -12,7 +12,7 @@ const getMyQuizStats = async (req, res) => {
 
     for (let ques of userInfo.quizzes) {
       totalQuestions += ques.questions.length;
-      totalImpressions += ques.impression;
+      totalImpressions += ques.impressions;
     }
 
     let data = {
@@ -34,7 +34,7 @@ const getTrendingQuiz = async (req, res) => {
       .populate({
         path: "quizzes",
         // filter quizzes on the basis of impression (greater than 10)
-        match: { impression: { $gt: 10 } },
+        // match: { impression: { $gt: 10 } },
         // Sorts by ascending order on the time of creation
         options: { sort: { createdAt: 1 } },
       })
@@ -53,7 +53,7 @@ const getMyQuizzes = async (req, res) => {
       .populate({
         path: "quizzes",
         // Select impression, name, and createdAt fields
-        select: "impression name createdAt",
+        select: "impressions quizName createdAt",
       })
       .select("quizzes");
 

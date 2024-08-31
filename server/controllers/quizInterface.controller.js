@@ -9,16 +9,16 @@ const takeQuiz = async (req, res) => {
         path: "questions",
         select: "optionType question options timer",
       })
-      .select("quizName typeOfQuiz questions impression");
+      .select("quizName typeOfQuiz questions impressions");
 
     if (!quiz) return res.status(404).json({ message: "Quiz is not found." });
 
-    quiz.impression += 1;
+    quiz.impressions += 1;
     await quiz.save();
 
     return res.status(201).json(quiz);
   } catch (error) {
-    return res.status(500).json({ message: error });
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -49,7 +49,7 @@ const getResult = async (req, res) => {
     let score = 0;
 
     for (let ans of answers) {
-      let question = await Question.findById(ans.id);
+      let question = await QuestionModel.findById(ans.id);
       if (question.answer == ans.ans) {
         question.correctImpression += 1;
         score++;

@@ -13,7 +13,7 @@ const getQuestion = async (req, res) => {
         .status(404)
         .send({ message: "Quiz is not available with this id!" });
     }
-    if (getQuiz.createdBy != req.User._id) {
+    if (getQuiz.createdBy.toString() != req.user._id.toString()) {
       return res.status(401).send({ message: "Unauthorize access..!" });
     }
 
@@ -36,7 +36,7 @@ const updateQuestion = async (req, res) => {
         .json({ message: "Quiz is not available with this id" });
 
     // check the loggedIn user has create the quiz or not
-    if (quiz.createdBy != req.user._id)
+    if (quiz.createdBy.toString() != req.user._id.toString())
       return res.status(401).json({ message: "Unauthorized Access." });
 
     // Check if all questions exist in the quiz

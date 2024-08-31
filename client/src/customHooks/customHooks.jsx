@@ -95,8 +95,10 @@ function customHooks() {
   }
 
   async function getQuestion(id) {
+    console.log("getQuestionById", id);
     try {
       const res = await apiClient.get(`/api/quiz/questions/${id}`);
+      console.log("getQuestionById", res);
       if (res.status === 200) {
         return {
           questions: res.data.questions,
@@ -130,7 +132,7 @@ function customHooks() {
   async function getTrendingQuiz() {
     try {
       const res = await apiClient.get("/api/user/getTrendingQuiz");
-      if (res.status === 200) {
+      if (res.status == 201) {
         return res.data.quizzes;
       } else {
         throw new Error("Server error while getting trending quizzes");

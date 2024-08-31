@@ -59,11 +59,13 @@ const QuizTable = () => {
 
   async function getAndSetQuizzes() {
     const data = await getMyQuizzes();
+    console.log("data",data)
     setQuizzes(data);
   }
 
   useEffect(() => {
     getAndSetQuizzes();
+    console.log("67",quizzes)
   }, []);
 
   return (
@@ -84,7 +86,7 @@ const QuizTable = () => {
               showDelete={show}
               num={i + 1}
               createdOn={formatDate(ele.createdAt)}
-              impressions={ele.impression}
+              impressions={ele.impressions}
               id={ele._id}
               quizName={ele.quizName}
               openUpdate={openUpdateModal}

@@ -1,6 +1,7 @@
 import React from 'react'
 import s from "./QuizCard.module.css"
 import { formatDate, formatNumber } from '../../../../utils/formateForDateAndNumber'
+import eye from "../../../../assets/eye.svg"
 
 const QuizCard = ({name, createdAt, views}) => {
   return (
@@ -9,7 +10,7 @@ const QuizCard = ({name, createdAt, views}) => {
         <h2>{name}</h2>
         <div className={s.views}>
             <p>{formatNumber(views)}</p>
-            <img src='' alt='eye icon' className={s.img} />
+            <img src={eye} alt='eye icon' className={s.img} />
         </div>
       </div>
       <div className={s.createdAt}>

@@ -43,6 +43,7 @@ const QuizRow = ({
   id,
   openUpdate,
 }) => {
+  
   const [showToast, setShowToast] = useState(false);
 
   const handleEdit = () => {

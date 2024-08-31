@@ -47,7 +47,7 @@ const getQuizById = async (req, res) => {
       return res.status(404).json({ message: "Quiz not found" });
     }
 
-    if (quiz.createdBy != req.user._id) {
+    if (quiz.createdBy.toString() != req.user._id.toString()) {
       return res.status(400).json({ message: "Unauthorized access" });
     }
 
@@ -63,7 +63,7 @@ const deleteQuiz = async (req, res) => {
     let quiz = await QuizModel.findById(id);
 
     if (!quiz) return res.status(404).json({ message: "Quiz is not found." });
-    if (quiz.createdBy != req.user._id)
+    if (quiz.createdBy.toString() != req.user._id.toString())
       return res.status(400).json({ message: "Unauthorized Access." });
 
     await QuizModel.findByIdAndDelete(id);
