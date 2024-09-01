@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import s from "./QuizTable.module.css";
 import QuizRow from "./QuizRow/QuizRow";
 import { formatDate } from "../../../utils/formateForDateAndNumber";
 import customHooks from "../../../customHooks/customHooks";
 import Modal from "../../Modal/Modal";
 import ConfirmDeleteModal from "../../Modal/ConfirmDeleteModal/ConfirmDeleteModal";
-import QuestionAnswerForm from "../../form/QuestionAnswerForm/questionAnswerForm";
+import QuestionAnswerForm from "../../form/QuestionAnswerForm/QuestionAnswerForm";
 
 const QuizTable = () => {
   let [quizzes, setQuizzes] = useState([]);
