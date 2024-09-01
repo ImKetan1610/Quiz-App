@@ -1,6 +1,6 @@
 .container {
   box-sizing: border-box;
-  /* background-color: #041325; */
+  background-color: #041325;
   width: 100vw;
   font-weight: 800;
   font-size: 1.5rem;
@@ -11,6 +11,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 html {

@@ -1,4 +1,7 @@
 /* Updated CSS with new class names */
+/* .container {
+  height: 100vh;  
+} */
 .loginForm {
   display: flex;
   flex-flow: column wrap;

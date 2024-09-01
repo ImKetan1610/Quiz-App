@@ -34,7 +34,7 @@ const getTrendingQuiz = async (req, res) => {
       .populate({
         path: "quizzes",
         // filter quizzes on the basis of impression (greater than 10)
-        // match: { impression: { $gt: 10 } },
+        match: { impressions: { $gt:  10} },
         // Sorts by ascending order on the time of creation
         options: { sort: { createdAt: 1 } },
       })

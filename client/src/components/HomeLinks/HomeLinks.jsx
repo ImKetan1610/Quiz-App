@@ -62,7 +62,7 @@ function HomeLinks() {
       <div>
         <hr />
         <h2 onClick={handleLogOut} className={s.logout}>
-          Logout
+          LOGOUT
         </h2>
       </div>
     </div>

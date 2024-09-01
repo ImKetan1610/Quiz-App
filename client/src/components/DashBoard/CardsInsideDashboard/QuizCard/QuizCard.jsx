@@ -4,10 +4,13 @@ import { formatDate, formatNumber } from '../../../../utils/formateForDateAndNum
 import eye from "../../../../assets/eye.svg"
 
 const QuizCard = ({name, createdAt, views}) => {
+  const trimmedQuizName = name.length > 10 
+    ? name.slice(0, 7) + '...' 
+    : name;
   return (
     <div className={s.container}>
       <div className={s.heading}>
-        <h2>{name}</h2>
+        <h2>{trimmedQuizName}</h2>
         <div className={s.views}>
             <p>{formatNumber(views)}</p>
             <img src={eye} alt='eye icon' className={s.img} />

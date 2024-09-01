@@ -11,11 +11,11 @@ import Toast from "../Toast/Toast";
 
 const CopyButton = ({ id, showToast }) => {
   const [copied, setCopied] = useState(false);
-
+  const URL = window.location.origin;
   const handleCopyClick = async () => {
     if (!copied) {
       try {
-        await navigator.clipboard.writeText(`${FRONTEND_URL}/startQuiz/${id}`);
+        await navigator.clipboard.writeText(`${URL}/startQuiz/${id}`);
         setCopied(true);
         showToast();
         setTimeout(() => setCopied(false), 3000);

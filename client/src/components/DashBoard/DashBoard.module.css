@@ -5,6 +5,7 @@
   color: #474444;
   flex-direction: column;
   gap: 4rem;
+  /* background-color: red; */
 }
 
 .cardContainer {

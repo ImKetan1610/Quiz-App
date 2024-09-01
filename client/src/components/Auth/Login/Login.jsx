@@ -26,20 +26,19 @@ const LoginForm = () => {
 
   const validateForm = () => {
     let validationErrors = {};
-    
+
     // Email validation
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
       validationErrors.email = "Please add a valid email ID";
     }
-  
+
     // Password validation
     if (!formData.password || formData.password.length < 8) {
       validationErrors.password = "Password must be at least 8 characters long";
     }
-  
+
     return validationErrors;
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,37 +67,39 @@ const LoginForm = () => {
   };
 
   return (
-    <form className={styles.loginForm} onSubmit={handleSubmit}>
-      <div className={styles.loginFormGroup}>
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className={errors.email ? styles.inputError : ""}
-        />
-      </div>
-      {errors.email && <div className={styles.errorText}>{errors.email}</div>}
+    <div className={styles.container}>
+      <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <div className={styles.loginFormGroup}>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className={errors.email ? styles.inputError : ""}
+          />
+        </div>
+        {errors.email && <div className={styles.errorText}>{errors.email}</div>}
 
-      <div className={styles.loginFormGroup}>
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          className={errors.password ? styles.inputError : ""}
-        />
-      </div>
-      {errors.password && (
-        <div className={styles.errorText}>{errors.password}</div>
-      )}
+        <div className={styles.loginFormGroup}>
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            className={errors.password ? styles.inputError : ""}
+          />
+        </div>
+        {errors.password && (
+          <div className={styles.errorText}>{errors.password}</div>
+        )}
 
-      <button type="submit" className={styles.loginSubmitButton}>
-        Login
-      </button>
-    </form>
+        <button type="submit" className={styles.loginSubmitButton}>
+          Login
+        </button>
+      </form>
+    </div>
   );
 };
 

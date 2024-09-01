@@ -15,6 +15,7 @@
   gap: 2rem;
 }
 
+
 .link {
   text-align: center;
   text-decoration: none;
@@ -32,4 +33,15 @@
   text-align: center;
   padding: 0.5rem 0rem 0rem 0rem;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+  .container {
+    flex-direction: row;
+    height: 6rem;
+    width: 100vw;
+  }
+  .linkGroup {
+    flex-direction: row;
+  }
 }
