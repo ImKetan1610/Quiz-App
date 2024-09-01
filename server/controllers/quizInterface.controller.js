@@ -45,16 +45,21 @@ const questionImpression = async (req, res) => {
 
 const getResult = async (req, res) => {
   try {
-    let { answers } = req.body;
+    let { answers, typeOfQuiz } = req.body;
     let score = 0;
 
     for (let ans of answers) {
       let question = await QuestionModel.findById(ans.id);
-      if (question.answer == ans.ans) {
+      if (typeOfQuiz == "QnA" && question.answer == ans.ans) {
         question.correctImpression += 1;
         score++;
+      } else if (typeOfQuiz == "POLL") {
+        if (!question.poll[ans.ans]) {
+          question.poll[ans.ans] = 1;
+        } else {
+          question.poll[ans.ans] += 1;
+        }
       }
-      question.impression += 1;
       await question.save();
     }
 

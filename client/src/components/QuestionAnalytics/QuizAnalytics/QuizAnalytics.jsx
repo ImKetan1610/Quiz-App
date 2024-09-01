@@ -28,7 +28,7 @@ function QuizAnalytics() {
         <h1>{quiz?.quizName} Question Analysis</h1>
         <div>
           <p>Created on : {quiz && formatDate(quiz?.createdAt)}</p>
-          <p>Impressions : {quiz?.impression}</p>
+          <p>Impressions : {quiz?.impressions}</p>
         </div>
       </header>
       {quiz?.questions.map((ele, i) => (

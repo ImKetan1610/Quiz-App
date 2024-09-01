@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import s from "./Success.module.css";
 import close from "../../assets/close.svg";
 import Toast from "../Toast/Toast";
-import { FRONTEND_URL } from "../../utils/constant";
 
 const SuccessCreateQuiz = ({ onClose }) => {
   const [showToast, setShowToast] = useState(false);

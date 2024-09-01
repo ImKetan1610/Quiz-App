@@ -23,11 +23,11 @@ function CreateQuiz() {
 
   function hide() {
     setShow(false);
-    navigate("/analysis");
   }
-
+  
   function hideSuccessfulModal() {
     setSuccess(false);
+    navigate("/analysis");
   }
 
   function showSuccessfulModal() {
