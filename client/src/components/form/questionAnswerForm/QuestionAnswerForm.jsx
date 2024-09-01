@@ -6,6 +6,7 @@ import OptionsContainer from "../OptionsContainer/OptionsContainer";
 import TimerSelector from "../TimerSelector/TimerSelector";
 import ButtonGroup from "../ButtonGroup/ButtonGroup";
 import customHooks from "../../../customHooks/customHooks";
+import { validateQuiz } from "../../../utils/validation";
 
 function QuestionAnswerForm({
   showSuccessModal,
@@ -19,6 +20,7 @@ function QuestionAnswerForm({
 }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const { createQuizzes, updateQuestions } = customHooks();
+  const [validation,setValidation] = useState('')
 
   function setIndex(i) {
     setSelectedIndex(i);
@@ -31,7 +33,11 @@ function QuestionAnswerForm({
       typeOfQuiz: quizType,
       questions: questions,
     };
-
+    let isValid = validateQuiz(data);
+    if (isValid != "valid") {
+      setValidation((_) => isValid);
+      return;
+    }
     if (state === "CREATE") {
       await createQuizzes(data);
     } else {
@@ -173,6 +179,7 @@ function QuestionAnswerForm({
         )}
       </div>
       <ButtonGroup state={state} onClose={onClose} />
+      <h5 className={s.validation}>{validation}</h5>
     </form>
   );
 };

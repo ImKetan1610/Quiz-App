@@ -186,3 +186,8 @@
   background-color: #52c41a;
   color: white;
 }
+
+.validation {
+  color: red;
+  text-align: center;
+}
