@@ -1,4 +1,4 @@
-import styles from "../questionAnswerForm/QuestionAnswerForm.module.css";
+import styles from "../QuestionAnswerForm/QuestionAnswerForm.module.css";
 
 function QuestionTypeSelector({ selectedOptionType, setOptionType }) {
   return (

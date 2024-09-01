@@ -1,4 +1,4 @@
-import s from "../questionAnswerForm/QuestionAnswerForm.module.css";
+import s from "../QuestionAnswerForm/QuestionAnswerForm.module.css";
 import add from "../../../assets/add.svg";
 import close from "../../../assets/close.svg";
 

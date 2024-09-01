@@ -1,4 +1,4 @@
-import s from "../questionAnswerForm/QuestionAnswerForm.module.css"
+import s from "../QuestionAnswerForm/QuestionAnswerForm.module.css"
 import del from "../../../assets/deleteIcon.svg";
 
 function OptionsContainer({

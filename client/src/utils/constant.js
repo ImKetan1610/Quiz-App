@@ -1,2 +1,2 @@
-export const BACKEND_URL = 'http://localhost:8082'
+export const BACKEND_URL = 'https://quiz-app-kadw.onrender.com'
 export const FRONTEND_URL = 'http://localhost:5173'

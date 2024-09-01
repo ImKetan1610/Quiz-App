@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "../Modal/Modal";
-import QuizTypeForm from "../form/quizTypeForm/QuizTypeForm";
-import QuestionAnswerForm from "../form/questionAnswerForm/QuestionAnswerForm";
+import QuizTypeForm from "../form/QuizTypeForm/QuizTypeForm";
+import QuestionAnswerForm from "../form/QuestionAnswerForm/questionAnswerForm.jsx";
 import SuccessCreateQuiz from "../Success/Success";
 import { useNavigate } from "react-router-dom";
 

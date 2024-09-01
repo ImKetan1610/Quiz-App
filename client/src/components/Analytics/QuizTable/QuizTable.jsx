@@ -5,7 +5,7 @@ import { formatDate } from "../../../utils/formateForDateAndNumber";
 import customHooks from "../../../customHooks/customHooks";
 import Modal from "../../Modal/Modal";
 import ConfirmDeleteModal from "../../Modal/ConfirmDeleteModal/ConfirmDeleteModal";
-import QuestionAnswerForm from "../../form/questionAnswerForm/questionAnswerForm";
+import QuestionAnswerForm from "../../form/QuestionAnswerForm/questionAnswerForm";
 
 const QuizTable = () => {
   let [quizzes, setQuizzes] = useState([]);

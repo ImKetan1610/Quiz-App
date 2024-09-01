@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import s from './QuizTypeForm.module.css';
 
 function QuizTypeForm({ onClose, setNameType }) {

@@ -1,4 +1,4 @@
-import s from "../questionAnswerForm/QuestionAnswerForm.module.css";
+import s from "../QuestionAnswerForm/QuestionAnswerForm.module.css";
 
 function TimerSelector({ selectedTimer, setTimer }) {
   return (
