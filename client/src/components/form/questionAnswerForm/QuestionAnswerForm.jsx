@@ -18,7 +18,7 @@ function QuestionAnswerForm({
   id,
 }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const { createQuiz, updateQuestions } = customHooks();
+  const { createQuizzes, updateQuestions } = customHooks();
 
   function setIndex(i) {
     setSelectedIndex(i);
@@ -33,7 +33,7 @@ function QuestionAnswerForm({
     };
 
     if (state === "CREATE") {
-      await createQuiz(data);
+      await createQuizzes(data);
     } else {
       await updateQuestions(data.questions, id);
     }

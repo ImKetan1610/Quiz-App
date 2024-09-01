@@ -25,7 +25,7 @@ function customHooks() {
     }
   );
 
-  async function createQuiz(data) {
+  async function createQuizzes(data) {
     try {
       const res = await apiClient.post("/api/quiz", data);
       // console.log("created Quiz", res.data);
@@ -147,7 +147,7 @@ function customHooks() {
   return {
     getTrendingQuiz,
     getQuestion,
-    createQuiz,
+    createQuizzes,
     apiClient,
     getMyStats,
     getMyQuizzes,
