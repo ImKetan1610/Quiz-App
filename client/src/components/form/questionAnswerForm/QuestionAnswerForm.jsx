@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import s from "./questionAnswerForm.module.css";
 import QuestionList from "../QuestionList/QuestionList";
 import QuestionTypeSelector from "../QuestionTypeSelector/QuestionTypeSelector";
