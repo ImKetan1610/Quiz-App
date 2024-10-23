@@ -1,9 +1,4 @@
-
-Here's a README file for your project:
-
----
-
-# Quiz Builder App
+# Quiz Builder App Frontend
 
 This project is a full-featured Quiz Builder application built with React. It allows users to create, manage, and take quizzes, offering various features such as user authentication, analytics, and quiz sharing.
 
